@@ -2,4 +2,4 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 yarn nx affected --target=lint
-yarn nx affected --target=builbuild
+yarn nx affected --target=build
