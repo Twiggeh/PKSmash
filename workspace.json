@@ -1,0 +1,7 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "rust_rocket_mongo": "apps/rust-rocket-mongo"
+  }
+}

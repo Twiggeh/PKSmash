@@ -1,0 +1,31 @@
+[package]
+name = "rust-rocket-mongo"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = { version = "0.5.0-rc.1", features = ["json", "uuid"] }
+serde = "*"
+redis = { version = "0.21", features = ["aio", "tokio-comp"]}
+thiserror = "*"
+serde_json = "1.0"
+bcrypt = "*"
+rand = "0.8"
+base64 = "0.13"
+tokio = { version = "1", features = ["full"] }
+chrono = { version = "0.4", features = ["serde"] }
+jsonwebtoken = "8"
+lazy_static = "1"
+futures = { version = "0.3", features = ["executor"] }
+
+rocket_okapi = "0.5"
+schemars = "0.7"
+okapi = { version = "0.5.0-alpha-1", features = ["derive_json_schema"] }
+
+[dependencies.mongodb]
+version = "2.2.2"
+default-features = false
+features = ["tokio-runtime"]
+
