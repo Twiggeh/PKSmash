@@ -1,31 +1,42 @@
 {
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "projectType": "application",
-  "sourceRoot": "apps/rust-rocket-mongo/src",
-  "targets": {
-    "build": {
-      "executor": "@nxrs/cargo:build",
-      "options": {
-        "release": false
-      },
-      "configurations": {
-        "production": {
-          "release": true
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "projectType": "application",
+    "sourceRoot": "apps/rust-rocket-mongo/src",
+    "targets": {
+        "run": {
+            "executor": "@nxrs/cargo:run",
+            "options": {
+                "release": false
+            },
+            "configurations": {
+                "production": {
+                    "release": true
+                }
+            }
+        },
+        "build": {
+            "executor": "@nxrs/cargo:build",
+            "options": {
+                "release": false
+            },
+            "configurations": {
+                "production": {
+                    "release": true
+                }
+            }
+        },
+        "test": {
+            "executor": "@nxrs/cargo:test",
+            "options": {}
+        },
+        "lint": {
+            "executor": "@nxrs/cargo:clippy",
+            "options": {
+                "fix": false,
+                "failOnWarnings": true,
+                "noDeps": true
+            }
         }
-      }
     },
-    "test": {
-      "executor": "@nxrs/cargo:test",
-      "options": {}
-    },
-    "lint": {
-      "executor": "@nxrs/cargo:clippy",
-      "options": {
-        "fix": false,
-        "failOnWarnings": true,
-        "noDeps": true
-      }
-    }
-  },
-  "tags": []
+    "tags": []
 }
